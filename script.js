@@ -35,10 +35,12 @@ clear_btn.addEventListener("click", clearEverything)
 submit_btn.addEventListener("click", () => {
     // text from comment box
     let comment = comment_box.value
-    // cannot type comment unless voted
-    if(document.cookie.includes("voted")) {
-        addComment(comment)
-    }   
+    if (comment) {
+        // cannot type comment unless voted
+        if (document.cookie.includes("voted")) {
+            addComment(comment)
+        }
+    }
 })
 
 function clearEverything() {
